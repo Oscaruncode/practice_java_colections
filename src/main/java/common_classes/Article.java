@@ -1,12 +1,13 @@
 package common_classes;
+import project_interfaces.Article_interface;
 
-public class Article {
+public class Article implements Article_interface{
     private int idArticle;
     private String name;
     private int amount;
     private double cost;
 
-    public Article(int idArticle, String name, int amount, double cost) {
+    public Article (int idArticle, String name, int amount, double cost){
         this.idArticle = idArticle;
         this.name = name;
         this.amount = amount;

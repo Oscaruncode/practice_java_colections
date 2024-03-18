@@ -1,8 +1,9 @@
 package project_interfaces;
 
+
 public interface Inventory_interface {
-    public void addArticle();
-    public void delArticle();
-    public void searchArticle();
-    public void listArticles();
+    void addArticle(Article_interface article);
+    void delArticle(int id);
+    void searchArticle(int id);
+    void listArticles();
 }
