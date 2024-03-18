@@ -10,12 +10,18 @@ import common_classes.Article;
 
 public class Exercise_colections {
     
+    
+    
     public static void manage_Inventory(Inventory_interface inventory, Scanner scanner){
+        boolean run_manage_inventory = true;
+        
+        while(run_manage_inventory){
         System.out.println("¿Qué acción desea realizar?");
         System.out.println("1. Adicionar artículo");
         System.out.println("2. Borrar artículo");
         System.out.println("3. Buscar artículo");
         System.out.println("4. Listar artículos");
+        System.out.println("5. Terminar programa");
         System.out.print("Ingrese el número de la opción: ");
         int opcion = scanner.nextInt();
         switch (opcion) {
@@ -44,11 +50,14 @@ public class Exercise_colections {
             case 4:
                 inventory.listArticles();
                 break;
+            case 5:
+                run_manage_inventory=false;
+                break;
             default:
                 System.out.println("Opción no valida");
                 break;
-        
-    }} 
+        }}
+    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -59,6 +68,7 @@ public class Exercise_colections {
         System.out.println("2. ");
         System.out.println("3. ");
         System.out.println("4. ");
+        System.out.println("5. ");
         System.out.print("Ingrese el número de la opción: ");
       
         option_colecction=scanner.nextInt();
@@ -66,7 +76,6 @@ public class Exercise_colections {
         switch(option_colecction){
             case 1:
                 Inventory_interface inventory_on_ArrList = new inventory_on_arrayList();
-                //Add loop for show inventory options
                 manage_Inventory(inventory_on_ArrList, scanner);
                 break;
             case 2:
@@ -83,6 +92,8 @@ public class Exercise_colections {
                 Inventory_interface inventory_on_4 = new inventory_on_arrayList();
                  //Add loop for show inventory options
                 manage_Inventory(inventory_on_4, scanner);
+                break;
+            case 5:
                 break;
             default:
                 System.out.println("Opción no valida");
