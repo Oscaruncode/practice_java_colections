@@ -1,7 +1,7 @@
 package common_classes;
 import project_interfaces.Article_interface;
 
-public class Article implements Article_interface{
+public class Article implements Article_interface,Comparable<Article>{
     private int idArticle;
     private String name;
     private int amount;
@@ -35,5 +35,9 @@ public class Article implements Article_interface{
         return "Article{" + "idArticle=" + idArticle + ", name=" + name + ", amount=" + amount + ", cost=" + cost + '}';
     }
 
-    
+      @Override
+    public int compareTo(Article other) {
+        // Compare by id
+        return Integer.compare(this.idArticle, other.idArticle);
+    }
 }
