@@ -2,6 +2,9 @@ package com.mycompany.exercise_colections;
 import java.util.Scanner;
 import project_interfaces.Inventory_interface;
 import inventory_diferents_colections.inventory_on_arrayList;
+import inventory_diferents_colections.inventory_on_linkedList;
+import inventory_diferents_colections.inventory_on_hashset;
+import inventory_diferents_colections.inventory_on_treeset;
 import common_classes.Article;
 /**
  *
@@ -65,10 +68,10 @@ public class Exercise_colections {
         
         System.out.println("Escoja el tipo de colección con el que quiere trabajar su inventario:");
         System.out.println("1. ArrayList");
-        System.out.println("2. ");
-        System.out.println("3. ");
-        System.out.println("4. ");
-        System.out.println("5. ");
+        System.out.println("2. LinkedList");
+        System.out.println("3. Hashset");
+        System.out.println("4. Treeset");
+        System.out.println("5. Salir");
         System.out.print("Ingrese el número de la opción: ");
       
         option_colecction=scanner.nextInt();
@@ -79,21 +82,18 @@ public class Exercise_colections {
                 manage_Inventory(inventory_on_ArrList, scanner);
                 break;
             case 2:
-                Inventory_interface inventory_on_2 = new inventory_on_arrayList();
-                 //Add loop for show inventory options
-                manage_Inventory(inventory_on_2, scanner);
+                Inventory_interface  inventory_on_linkedList= new inventory_on_linkedList();
+                manage_Inventory(inventory_on_linkedList, scanner);
                 break;
             case 3:
-                 Inventory_interface inventory_on_3 = new inventory_on_arrayList();
-                  //Add loop for show inventory options
-                manage_Inventory(inventory_on_3, scanner);
+                 Inventory_interface inventory_on_hashset = new inventory_on_hashset();
+                manage_Inventory(inventory_on_hashset, scanner);
                 break;
             case 4:
-                Inventory_interface inventory_on_4 = new inventory_on_arrayList();
-                 //Add loop for show inventory options
-                manage_Inventory(inventory_on_4, scanner);
+                Inventory_interface inventory_on_treeset = new inventory_on_treeset();
+                manage_Inventory(inventory_on_treeset, scanner);
                 break;
-            case 5:
+            case 5: //leave
                 break;
             default:
                 System.out.println("Opción no valida");
