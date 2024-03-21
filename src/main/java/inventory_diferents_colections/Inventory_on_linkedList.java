@@ -1,13 +1,14 @@
 package inventory_diferents_colections;
-import java.util.TreeSet;
+
+import java.util.LinkedList;
 import common_classes.Article;
 import project_interfaces.Inventory_interface;
 
-public class inventory_on_treeset implements Inventory_interface{
-    private TreeSet<Article> inventory;
+public class Inventory_on_linkedList implements Inventory_interface {
+    private LinkedList<Article> inventory;
 
-    public inventory_on_treeset() {
-        inventory = new TreeSet<>();
+    public Inventory_on_linkedList() {
+        inventory = new LinkedList<>();
     }
 
     @Override
@@ -25,7 +26,7 @@ public class inventory_on_treeset implements Inventory_interface{
                 return;
             }
         }
-        System.out.println("Artículo no encontrado para borrar.");
+        System.out.println("Artículo no encontrado, no es posible borrarlo.");
     }
 
     @Override
@@ -48,4 +49,3 @@ public class inventory_on_treeset implements Inventory_interface{
         }
     }
 }
-

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import common_classes.Article;
 import project_interfaces.Inventory_interface;
 
-public class inventory_on_arrayList implements Inventory_interface{
+public class Inventory_on_arrayList implements Inventory_interface{
    private ArrayList<Article> inventory;
    
-   public inventory_on_arrayList() {
+   public Inventory_on_arrayList() {
         inventory = new ArrayList<>(); // Inicialización del ArrayList
     }
    

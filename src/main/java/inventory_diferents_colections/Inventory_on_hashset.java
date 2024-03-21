@@ -1,14 +1,14 @@
 package inventory_diferents_colections;
-
-import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.Iterator;
 import common_classes.Article;
 import project_interfaces.Inventory_interface;
 
-public class inventory_on_linkedList implements Inventory_interface {
-    private LinkedList<Article> inventory;
+public class Inventory_on_hashset implements Inventory_interface{
+    private HashSet<Article> inventory;
 
-    public inventory_on_linkedList() {
-        inventory = new LinkedList<>();
+    public Inventory_on_hashset() {
+        inventory = new HashSet<>();
     }
 
     @Override
@@ -19,14 +19,16 @@ public class inventory_on_linkedList implements Inventory_interface {
 
     @Override
     public void delArticle(int id) {
-        for (Article article : inventory) {
+        Iterator<Article> iterator = inventory.iterator();
+        while (iterator.hasNext()) {
+            Article article = iterator.next();
             if (article.getIdArticle() == id) {
-                inventory.remove(article);
+                iterator.remove();
                 System.out.println("Artículo borrado correctamente.");
                 return;
             }
         }
-        System.out.println("Artículo no encontrado, no es posible borrarlo.");
+        System.out.println("Artículo no encontrado para borrar.");
     }
 
     @Override
@@ -48,4 +50,7 @@ public class inventory_on_linkedList implements Inventory_interface {
             System.out.println(article);
         }
     }
+
 }
+
+

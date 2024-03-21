@@ -1,14 +1,13 @@
 package inventory_diferents_colections;
-import java.util.HashSet;
-import java.util.Iterator;
+import java.util.TreeSet;
 import common_classes.Article;
 import project_interfaces.Inventory_interface;
 
-public class inventory_on_hashset implements Inventory_interface{
-    private HashSet<Article> inventory;
+public class Inventory_on_treeset implements Inventory_interface{
+    private TreeSet<Article> inventory;
 
-    public inventory_on_hashset() {
-        inventory = new HashSet<>();
+    public Inventory_on_treeset() {
+        inventory = new TreeSet<>();
     }
 
     @Override
@@ -19,11 +18,9 @@ public class inventory_on_hashset implements Inventory_interface{
 
     @Override
     public void delArticle(int id) {
-        Iterator<Article> iterator = inventory.iterator();
-        while (iterator.hasNext()) {
-            Article article = iterator.next();
+        for (Article article : inventory) {
             if (article.getIdArticle() == id) {
-                iterator.remove();
+                inventory.remove(article);
                 System.out.println("Artículo borrado correctamente.");
                 return;
             }
@@ -50,7 +47,5 @@ public class inventory_on_hashset implements Inventory_interface{
             System.out.println(article);
         }
     }
-
 }
-
 

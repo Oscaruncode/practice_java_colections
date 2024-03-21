@@ -1,10 +1,10 @@
 package com.mycompany.exercise_colections;
 import java.util.Scanner;
 import project_interfaces.Inventory_interface;
-import inventory_diferents_colections.inventory_on_arrayList;
-import inventory_diferents_colections.inventory_on_linkedList;
-import inventory_diferents_colections.inventory_on_hashset;
-import inventory_diferents_colections.inventory_on_treeset;
+import inventory_diferents_colections.Inventory_on_arrayList;
+import inventory_diferents_colections.Inventory_on_linkedList;
+import inventory_diferents_colections.Inventory_on_hashset;
+import inventory_diferents_colections.Inventory_on_treeset;
 import common_classes.Article;
 /**
  *
@@ -78,19 +78,19 @@ public class Exercise_colections {
         
         switch(option_colecction){
             case 1:
-                Inventory_interface inventory_on_ArrList = new inventory_on_arrayList();
+                Inventory_interface inventory_on_ArrList = new Inventory_on_arrayList();
                 manage_Inventory(inventory_on_ArrList, scanner);
                 break;
             case 2:
-                Inventory_interface  inventory_on_linkedList= new inventory_on_linkedList();
+                Inventory_interface  inventory_on_linkedList= new Inventory_on_linkedList();
                 manage_Inventory(inventory_on_linkedList, scanner);
                 break;
             case 3:
-                 Inventory_interface inventory_on_hashset = new inventory_on_hashset();
+                 Inventory_interface inventory_on_hashset = new Inventory_on_hashset();
                 manage_Inventory(inventory_on_hashset, scanner);
                 break;
             case 4:
-                Inventory_interface inventory_on_treeset = new inventory_on_treeset();
+                Inventory_interface inventory_on_treeset = new Inventory_on_treeset();
                 manage_Inventory(inventory_on_treeset, scanner);
                 break;
             case 5: //leave
